@@ -1,0 +1,46 @@
+:root {
+    --1: #6495ed;
+    --2: #00b98b;
+    --3: #002770;
+    --4: #141e30;
+    --5: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+section {
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+section .title {
+    flex: none;
+    width: 100%;
+    display: flex;
+    padding: 1rem 10%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+section .title h2 {
+    font-weight: 900;
+    font-variant: small-caps;
+    text-transform: capitalize;
+    font-size: clamp(1.4rem, 2vw, 4rem);
+}
+
+section .content {
+    flex: 1 1 auto;
+}

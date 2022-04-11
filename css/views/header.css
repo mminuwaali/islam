@@ -1,0 +1,140 @@
+header {
+    top: 1rem;
+    z-index: 10;
+    height: 3rem;
+    display: flex;
+    padding: 0 2%;
+    margin: 0 auto;
+    position: sticky;
+    align-items: center;
+    border-radius: 0.4rem;
+    backdrop-filter: blur(0.4rem);
+    justify-content: space-between;
+    width: clamp(300px, 80vw, 100rem);
+    box-shadow: 0 0 1rem rgba(0 0 0 / 0.2);
+    background-color: rgba(255 255 255 / 0.6);
+}
+
+header #logo {
+    height: 2.8rem;
+    color: var(--3);
+    font-weight: 900;
+    font-family: sans-serif;
+    font-variant: small-caps;
+    text-shadow: 0.2rem 0.2rem 0.1rem rgba(0 0 0 / 0.4);
+}
+
+header .toggler {
+    opacity: 0;
+    display: none;
+}
+
+header #main {
+    height: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header #main a {
+    color: var(--1);
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: 200ms linear;
+    font-variant: small-caps;
+}
+
+header #main a:hover {
+    color: var(--4);
+}
+
+header #sign {
+    margin: 0 1rem;
+    color: var(--5);
+    font-weight: 900;
+    transition: 180ms;
+    padding: 0.2rem 1rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-variant: small-caps;
+    background-color: var(--1);
+    box-shadow: 0.1rem 0.2rem 0.2rem rgba(0 0 0 / 0.4);
+}
+
+header #sign:hover {
+    background-color: var(--3);
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding-right: 2.5rem;
+    }
+    header #main {
+        top: 5rem;
+        left: 2rem;
+        z-index: 10;
+        width: 0rem;
+        height: auto;
+        position: fixed;
+        overflow: hidden;
+        transition: 300ms;
+        border-radius: 0.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: var(--5);
+        justify-content: flex-start;
+        box-shadow: 0.3rem 0.3rem 0.5rem rgba(0 0 0 / 0.2);
+    }
+    header .toggler:checked+#main {
+        width: 16rem;
+        padding: 0.4rem;
+        pointer-events: all;
+    }
+    header #main a {
+        width: 100%;
+        margin: 1px;
+        font-size: 1.3rem;
+        padding: 0.7rem 0;
+        padding-left: 1rem;
+    }
+    header #main a:hover {
+        color: var(--5);
+        background-color: var(--1);
+    }
+    header :is(.toggler, #main b) {
+        top: 1rem;
+        right: 4%;
+        width: 2rem;
+        height: 1rem;
+        display: flex;
+        position: fixed;
+        cursor: pointer;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    header #main b {
+        pointer-events: none;
+    }
+    header #main b i {
+        width: 100%;
+        height: 30%;
+        transition: 120ms;
+        border-radius: 1rem;
+        display: inline-block;
+        background-color: var(--3);
+    }
+    header .toggler:checked+#main b i {
+        width: 70%;
+        position: absolute;
+        transform: rotate(45deg);
+    }
+    header .toggler:checked+#main b i:last-child {
+        transform: rotate(-45deg);
+    }
+}
